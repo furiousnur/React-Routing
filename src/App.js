@@ -7,6 +7,7 @@ import Blogs from "./Pages/Blogs";
 import Error from "./Pages/Error";
 import Navbar from "./Components/Navbar";
 import Blog from "./Pages/Blog";
+import User from "./Pages/User";
 
 function App() {
   return ( 
@@ -16,6 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/about" element={<About />}/>
+                <Route path="/user" element={<User />}/>
                 <Route path="/contact" element={<Contact />}/>
                 <Route path="/blogs" element={<Blogs />}/>
                 <Route path="/blogs/:title" element={<Blog />}/>

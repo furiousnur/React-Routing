@@ -14,7 +14,7 @@ const Blog = () => {
     
     return (
         <div>
-            <h1>{title}</h1>
+            <h1>{title}</h1> 
             <p>{location.state.body.slice(0,500)}</p>
             <p>{location.state.body.slice(501,10000)}</p>
             <button className="blog-btn" onClick={()=>{navigate("/blogs")}}>Back to Blogs</button>
