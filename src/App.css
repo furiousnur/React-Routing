@@ -56,3 +56,44 @@ nav{
 nav .active{
   color: orange;
 }
+
+section{
+  display: grid;
+  grid-gap: 1rem;
+}
+
+article{
+  background-color: #d0ecfd;
+  padding: 0 0.5rem 1rem 0.5rem;  
+}
+
+article p{
+  text-align: justify; 
+}
+
+.blog-btn{
+    background-color: orange;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    font-size: 14px;
+    color: black; 
+    border: orange;
+    cursor: pointer;
+}
+
+.blog-btn:hover{
+  background-color: brown;
+  color: white;
+}
+
+@media screen and (min-width: 600px){
+  section{
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (min-width: 1200px){
+  section{
+    grid-template-columns: auto auto auto;
+  }
+}

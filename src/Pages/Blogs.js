@@ -1,12 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react'; 
+import {blogsData} from "../data";
+import {Link} from "react-router-dom";
 
-const Blogs = () => {
+const Blogs = () => { 
+    const [blogs, setBlog] = useState(blogsData);
+    
+    const truncateString = (str, num)=>{
+        if (str.length > num){
+            return str.slice(0, num) + "...";
+        }else{
+            return str;
+        }
+    }
+    
     return (
         <div>
             <h1>Blogs Page</h1>
-            <p style={{textAlign:"justify"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore doloribus eligendi illo modi non, odio quae ut! Autem ea esse ipsam omnis saepe? Cumque dolor eius facilis quidem quisquam totam veniam voluptates voluptatum? Blanditiis ex fuga fugit impedit inventore iure laboriosam modi necessitatibus, nesciunt officiis, optio praesentium quaerat quos ratione repudiandae sequi sunt temporibus unde ut veniam vero voluptatem voluptatum. Animi aspernatur blanditiis consequuntur fugit ipsam iste laborum officiis quia quod sapiente! Amet animi, asperiores cumque debitis deleniti dolore ducimus earum eius explicabo facere fugiat harum, iste maxime non odio placeat qui repellendus rerum, saepe tempore? Qui, repudiandae, veritatis?</p>
-            <p style={{textAlign:"justify"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dolore doloribus eligendi illo modi non, odio quae ut! Autem ea esse ipsam omnis saepe? Cumque dolor eius facilis quidem quisquam totam veniam voluptates voluptatum? Blanditiis ex fuga fugit impedit inventore iure laboriosam modi necessitatibus, nesciunt officiis, optio praesentium quaerat quos ratione repudiandae sequi sunt temporibus unde ut veniam vero voluptatem voluptatum. Animi aspernatur blanditiis consequuntur fugit ipsam iste laborum officiis quia quod sapiente! Amet animi, asperiores cumque debitis deleniti dolore ducimus earum eius explicabo facere fugiat harum, iste maxime non odio placeat qui repellendus rerum, saepe tempore? Qui, repudiandae, veritatis?</p>
-        </div>
+            <section>
+                {blogs && blogs.map((blog)=> {
+                    const {id, title, body} = blog;
+                    return <article key={id}>
+                        <h3>{title}</h3>
+                        <p>{truncateString(body, 220)}</p>
+                        <Link className="blog-btn" to={title}>Read More</Link>
+                    </article>
+                })}
+            </section>  
+        </div> 
     );
 };
 
