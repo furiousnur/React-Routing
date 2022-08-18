@@ -9,6 +9,7 @@ import Blog from "../Pages/Blog";
 import Error from "../Pages/Error";
 import Navbar from "../Components/Navbar";
 import Protected from "./Protected";
+import Users from "../Pages/Users";
 
 const Index = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,6 +22,7 @@ const Index = () => {
                     <Route path="/" element={<Home />}/>
                     <Route path="/about" element={<About />}/>
                     <Route path="/user" element={<User />}/>
+                    <Route path="/users" element={<Users />}/>
                     <Route path="/contact" element={<Contact />}/> 
                     <Route path="/blogs" element={<Protected isLoggedIn={isLoggedIn}><Blogs /></Protected>}/>
                     <Route path="/blogs/:title" element={<Protected isLoggedIn={isLoggedIn}><Blog /></Protected>}/>
